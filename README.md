@@ -2,8 +2,6 @@
 
 Haremos:
 
-- [ ] 11
-- [ ] 22
-- [ ] 33
-
-TODO: Operador enqueue
+- [x] 11
+- [x] 22
+- [x] 33
