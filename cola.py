@@ -31,8 +31,13 @@ class cola:
         else:
             raise OverflowError(f"Queue: Cola llena")
 
-    # def dqueue() -> object:
-    #     cola = cola[1:]
+    def dequeue(self) -> object:
+        if len(self.__data) == 0:
+            raise ValueError
+        else:
+            item = self.__data[0]
+            self.__data = self.__data[1:]
+            return item
 
 if __name__ == "__main__":
 
@@ -56,3 +61,21 @@ if __name__ == "__main__":
         print(c)
     except OverflowError:
         print("Número introducido no entró, cola llena")
+
+    item = c.dequeue()
+    print(item, c)
+
+    item = c.dequeue()
+    print(item, c)
+
+    item = c.dequeue()
+    print(item, c)
+
+    item = c.dequeue()
+    print(item, c)
+
+    try:
+        item = c.dequeue()
+        print(item, c)
+    except ValueError:
+        print("Lista vacía")
