@@ -10,20 +10,21 @@ while tries < 100:
     tries += 1
     coin = random.randint(1, 2)
     if coin == 1:
-        print('Enqueu...')
+        # print('Enqueu...')
         dice = random.randint(1, 6)
         try:
             c.enqueue(dice)
             print(c)
-        except:
-            pass
+        except OverflowError:
+            print("Número introducido no entró, cola llena")
+
     if coin == 2:
-        print('Dequeu...')
+        # print('Dequeue...')
         try:
             data = c.dequeue()
             print(data)
-        except:
-            pass
+        except ValueError:
+            print("Nada sale, lista vacía")
 
 total = tries
 print(total)
